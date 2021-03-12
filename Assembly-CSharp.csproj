@@ -36,6 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\2D\Camera.cs" />
+     <Compile Include="Assets\Scripts\2D\EnemyBullet.cs" />
+     <Compile Include="Assets\Scripts\2D\HealthBarScript.cs" />
+     <Compile Include="Assets\Scripts\2D\PlBullet.cs" />
+     <Compile Include="Assets\Scripts\2D\PlayerControler.cs" />
+     <Compile Include="Assets\Scripts\2D\Turret.cs" />
+     <Compile Include="Assets\Scripts\2D\WalcRob.cs" />
      <Compile Include="Assets\Scripts\3D\CamFollowPl.cs" />
      <Compile Include="Assets\Scripts\3D\ChangeCamera.cs" />
      <Compile Include="Assets\Scripts\3D\ChangeColor.cs" />
