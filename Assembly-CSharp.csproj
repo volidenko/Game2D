@@ -36,13 +36,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\2D\Camera.cs" />
+     <Compile Include="Assets\Scripts\2D\EnBullForWalk.cs" />
      <Compile Include="Assets\Scripts\2D\EnemyBullet.cs" />
+     <Compile Include="Assets\Scripts\2D\GameMaster2D.cs" />
      <Compile Include="Assets\Scripts\2D\HealthBarScript.cs" />
+     <Compile Include="Assets\Scripts\2D\MyCamera.cs" />
      <Compile Include="Assets\Scripts\2D\PlBullet.cs" />
      <Compile Include="Assets\Scripts\2D\PlayerController2D.cs" />
      <Compile Include="Assets\Scripts\2D\Turret.cs" />
      <Compile Include="Assets\Scripts\2D\WalcRob.cs" />
+     <Compile Include="Assets\Scripts\2D\WalcShootRobot.cs" />
      <Compile Include="Assets\Scripts\3D\CamFollowPl.cs" />
      <Compile Include="Assets\Scripts\3D\ChangeCamera.cs" />
      <Compile Include="Assets\Scripts\3D\ChangeColor.cs" />
@@ -60,6 +63,7 @@
      <Compile Include="Assets\Scripts\3D\Respawn.cs" />
      <Compile Include="Assets\Scripts\3D\ScrollTexture.cs" />
      <Compile Include="Assets\Scripts\3D\Teleport.cs" />
+     <None Include="Assets\A_piece_of_nature\Readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

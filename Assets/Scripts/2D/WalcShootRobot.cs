@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalcRob : MonoBehaviour{
+public class WalcShootRobot : MonoBehaviour{
     public float speed=2f;
     Vector3 direction;
     PlayerController2D plCon;
-    public int price=3;
+    public int price=4;
+    public GameObject bullet;
+    public GameObject bulSpawn;
     int enemyLive=5;
+    float dist;
+    bool actio=false;
+    private GameObject pl;
 
     // Start is called before the first frame update
     void Start(){
+        pl=GameObject.Find("Player");
         direction=new Vector3(-1f, 0f, 0f);
         plCon=GameObject.Find("Player").GetComponent<PlayerController2D>();
     }
@@ -22,18 +28,31 @@ public class WalcRob : MonoBehaviour{
             Destroy(this.gameObject);
             plCon.PlayerScore+=price;
         }
+        dist=Vector3.Distance(pl.transform.position, transform.position);
+        if(dist<=5 && actio==false){
+            actio=true;
+            Shoot();
+        }
     }
 
     public void Run(){
         transform.position=Vector3.MoveTowards(transform.position, transform.position+direction, speed*Time.deltaTime);
     }
 
+    void Shoot(){
+        Vector3 position=bulSpawn.transform.position;
+        Instantiate(bullet, position, bullet.transform.rotation);
+        StartCoroutine("Charge");
+    }
+
     void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.name=="Left"){
             this.transform.localScale=new Vector3(-1f, 1f, 1f);
             direction=new Vector3(1f, 0f, 0f);
+            print("check");
         }
         if (other.gameObject.name=="Right"){
+            print("check");
             this.transform.localScale=new Vector3(1f, 1f, 1f);
             direction=new Vector3(-1f, 0f, 0f);
         }
@@ -47,5 +66,11 @@ public class WalcRob : MonoBehaviour{
             enemyLive--;
             print(enemyLive);
         }
+    }
+
+        IEnumerator Charge(){
+        yield return new WaitForSeconds(1.0f);
+        actio=false;
+        StopCoroutine("Charge");
     }
 }

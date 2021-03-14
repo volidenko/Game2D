@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController2D : MonoBehaviour
-{
+public class PlayerController2D : MonoBehaviour{
     public int PlayerLives=5;
+    public int PlayerScore=0;
     public int MaxPlayerLives=5;
     float speed=5f;
     float jumpForse=15f;
@@ -17,19 +17,17 @@ public class PlayerController2D : MonoBehaviour
     public HealthBarScript healthBar;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         rb2=GetComponent<Rigidbody2D>();
         sprRen=GetComponentInChildren<SpriteRenderer>();
-        healthBar.SetMaxHealth(MaxPlayerLives);
+        //healthBar.SetMaxHealth(MaxPlayerLives);
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         CheckGround();
     }
-    void Update()
-    {
+
+    void Update(){
         if(Input.GetButtonDown("Fire1")) Shoot();
         if(Input.GetButton("Horizontal")) Run();
         if(Input.GetButtonDown("Jump")&&isGrounded) Jump(); //прыжок
@@ -38,7 +36,7 @@ public class PlayerController2D : MonoBehaviour
             transform.position=rPoint.position;
         }
         print(PlayerLives);
-        healthBar.SetHealth(PlayerLives);
+        //healthBar.SetHealth(PlayerLives);
     }
     
     public void Run(){
@@ -50,23 +48,30 @@ public class PlayerController2D : MonoBehaviour
             this.transform.localScale=new Vector3(1f, 1f, 1f);
 
     }
+
     public void Jump(){
         rb2.AddForce(transform.up*jumpForse,ForceMode2D.Impulse);
     }
+
     void CheckGround(){
        Collider2D[] colliders=Physics2D.OverlapCircleAll(transform.position, 0.1f);
        isGrounded=colliders.Length>1;
     }
+
     void Shoot(){
         Vector3 position=bulSpawn.transform.position;
         Instantiate(bullet, position, bullet.transform.rotation);
     }
+    
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name=="FloorDown"){
             transform.position=rPoint.position;
         }
         if(collision.gameObject.name=="EndLevel"){
             transform.position=rPoint.position;
+        }
+        if(collision.gameObject.name=="Obstacle"){
+            PlayerLives--;
         }
     }
 }

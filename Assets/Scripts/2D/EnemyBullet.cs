@@ -22,15 +22,13 @@ public class EnemyBullet : MonoBehaviour{
             act=true;
         }
         transform.position=Vector3.MoveTowards(transform.position,transform.position+lDirection, speed*Time.deltaTime);
-        
     }
 
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name=="Player"){
             plCon.PlayerLives--;
-            print("destfafease");
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 
     IEnumerator BulLife(){

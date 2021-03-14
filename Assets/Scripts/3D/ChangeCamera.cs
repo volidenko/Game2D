@@ -11,7 +11,7 @@ public class ChangeCamera : MonoBehaviour
     void Start()
     {
         TheCamera=GetComponent<Camera>();
-        TheCamera=Camera.main;
+        //TheCamera=Camera.main;
         firstLook=false;
     }
 
