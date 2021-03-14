@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 254404791}
   - component: {fileID: 254404794}
   - component: {fileID: 254404793}
+  - component: {fileID: 254404797}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -259,9 +260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325f5f17d9ab77c42ae7fa1a13c94c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _controller: {fileID: 0}
   _speed: 5
   _jumpHeight: 20
   _gravity: 1
+  _yVelocity: 0
   playerScore: 0
   playerLive: 5
   Obs_pref: {fileID: 0}
@@ -332,6 +335,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254404790}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &254404797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254404790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb3174180ebb4844b464a880df5e48d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  _jumpHeight: 20
+  _gravity: 1
+  playerScore: 0
+  playerLive: 5
+  Obs_pref: {fileID: 1600679594}
+  textLive: {fileID: 0}
+  textScore: {fileID: 0}
 --- !u!1 &375278245
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375278246}
+  - component: {fileID: 375278247}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -356,12 +380,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375278245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 196.11198, y: 332.3755, z: -164.01437}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375278247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375278245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25300c9fa711cd43b82816959100337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _platformPrefabs:
+  - {fileID: 584140014}
+  - {fileID: 584140014}
 --- !u!1 &584140014
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1600679595}
+  - component: {fileID: 1600679596}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -422,6 +462,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600679596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600679594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a021ba01bc705c4694e1743915720b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1629801143
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\Scripts\2D\EnBullForWalk.cs" />
      <Compile Include="Assets\Scripts\2D\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\2D\GameMaster2D.cs" />
@@ -64,6 +63,11 @@
      <Compile Include="Assets\Scripts\3D\Respawn.cs" />
      <Compile Include="Assets\Scripts\3D\ScrollTexture.cs" />
      <Compile Include="Assets\Scripts\3D\Teleport.cs" />
+     <Compile Include="Assets\Scripts\Runner\LifeTime.cs" />
+     <Compile Include="Assets\Scripts\Runner\Obstacle.cs" />
+     <Compile Include="Assets\Scripts\Runner\Platform.cs" />
+     <Compile Include="Assets\Scripts\Runner\PlatformManager.cs" />
+     <Compile Include="Assets\Scripts\Runner\Player.cs" />
      <None Include="Assets\A_piece_of_nature\Readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
