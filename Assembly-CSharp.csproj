@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\Scripts\2D\EnBullForWalk.cs" />
      <Compile Include="Assets\Scripts\2D\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\2D\GameMaster2D.cs" />
