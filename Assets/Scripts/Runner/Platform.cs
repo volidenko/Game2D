@@ -11,18 +11,16 @@ public class Platform : MonoBehaviour{
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         
     }
 
     private void OnBecameInvisible(){
-        _platformManager.RecyclePlatform(this.GameObject, lOffset);
+        _platformManager.RecyclePlatform(this.gameObject, lOffset);
     }
 }
