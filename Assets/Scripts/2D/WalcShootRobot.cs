@@ -13,20 +13,29 @@ public class WalcShootRobot : MonoBehaviour{
     float dist;
     bool actio=false;
     private GameObject pl;
+    bool isDeath;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start(){
         pl=GameObject.Find("Player");
         direction=new Vector3(-1f, 0f, 0f);
         plCon=GameObject.Find("Player").GetComponent<PlayerController2D>();
+        anim=gameObject.transform.GetChild(0).GetComponent<Animator>();
+        anim.SetFloat("SpeedEnemy", speed);
     }
 
     // Update is called once per frame
     void Update(){
         Run();
-        if(enemyLive==0){
-            Destroy(this.gameObject);
+        if(enemyLive==0&&isDeath==false){
+            speed=0f;
+            anim.SetFloat("SpeedEnemy", speed);
+            isDeath=true;
+            anim.SetBool("EnDeath",isDeath);
+            //Destroy(this.gameObject);
             plCon.PlayerScore+=price;
+            StartCoroutine("Death");
         }
         dist=Vector3.Distance(pl.transform.position, transform.position);
         if(dist<=5 && actio==false){

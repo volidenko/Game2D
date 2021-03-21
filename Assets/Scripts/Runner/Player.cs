@@ -17,15 +17,26 @@ public class Player : MonoBehaviour{
     public GameObject Obs_pref;
     public Text textLive;
     public Text textScore;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start(){
         _controller=GetComponent<CharacterController>();
+        anim=gameObject.transform.GetChild(0).GetComponent<Animator>();
         StartCoroutine("CreateObs");
     }
 
     // Update is called once per frame
     void Update(){
+        anim.SetInteger("PlayerLive", playerLive);
+        anim.SetBool("isGrounderd",_controller.isGrounded);
+        if(playerScore>=5){
+            print("Win");
+        }
+        if(playerLive==0){
+            print("Lose");
+            _speed=0.5f;
+        }
         if(this.transform.position.z%20==0){
         }
         Vector3 direction = new Vector3(0,0,1);		

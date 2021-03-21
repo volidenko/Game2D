@@ -15,11 +15,14 @@ public class PlayerController2D : MonoBehaviour{
     public GameObject bulSpawn;
     public Transform rPoint;
     public HealthBarScript healthBar;
+    bool isDeath;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start(){
         rb2=GetComponent<Rigidbody2D>();
         sprRen=GetComponentInChildren<SpriteRenderer>();
+        anim=gameObject.transform.GetChild(0).GetComponent<Animator>();
         //healthBar.SetMaxHealth(MaxPlayerLives);
     }
 
@@ -28,12 +31,15 @@ public class PlayerController2D : MonoBehaviour{
     }
 
     void Update(){
+        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
         if(Input.GetButtonDown("Fire1")) Shoot();
         if(Input.GetButton("Horizontal")) Run();
         if(Input.GetButtonDown("Jump")&&isGrounded) Jump(); //прыжок
-        if(PlayerLives==0){
-            PlayerLives=5;
-            transform.position=rPoint.position;
+        if(PlayerLives==0&&isDeath==false){
+            isDeath=true;
+            anim.SetBool("isDeath", isDeath);
+            // PlayerLives=5;
+            // transform.position=rPoint.position;
         }
         print(PlayerLives);
         //healthBar.SetHealth(PlayerLives);
