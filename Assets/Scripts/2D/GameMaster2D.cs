@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameMaster2D : MonoBehaviour{
     public Text text;
+    public Text hStext;
     PlayerController2D plCon;
 
     // Start is called before the first frame update
@@ -15,5 +16,6 @@ public class GameMaster2D : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         text.text=plCon.PlayerScore.ToString();
+        hStext.text=HiScoreScr.d2HiScore.ToString();
     }
 }

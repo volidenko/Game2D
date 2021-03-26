@@ -17,12 +17,16 @@ public class PlayerController2D : MonoBehaviour{
     public HealthBarScript healthBar;
     bool isDeath;
     Animator anim;
+    LoseMenu loseMenu;
+    WinMenu winMenu;
 
     // Start is called before the first frame update
     void Start(){
         rb2=GetComponent<Rigidbody2D>();
         sprRen=GetComponentInChildren<SpriteRenderer>();
         anim=gameObject.transform.GetChild(0).GetComponent<Animator>();
+        loseMenu=GameObject.Find("LoseMenuCanvas").GetComponent<LoseMenu>();
+        winMenu=GameObject.Find("WinMenuCanvas").GetComponent<WinMenu>();
         //healthBar.SetMaxHealth(MaxPlayerLives);
     }
 
@@ -37,12 +41,15 @@ public class PlayerController2D : MonoBehaviour{
         if(Input.GetButtonDown("Jump")&&isGrounded) Jump(); //прыжок
         if(PlayerLives==0&&isDeath==false){
             isDeath=true;
-            anim.SetBool("isDeath", isDeath);
+            anim.SetBool("isDeath", isDeath); 
+            StartCoroutine("AfterAnim");
             // PlayerLives=5;
             // transform.position=rPoint.position;
         }
         print(PlayerLives);
         //healthBar.SetHealth(PlayerLives);
+        if(PlayerScore>HiScoreScr.d2HiScore)
+            HiScoreScr.d2HiScore=PlayerScore;
     }
     
     public void Run(){
@@ -79,5 +86,11 @@ public class PlayerController2D : MonoBehaviour{
         if(collision.gameObject.name=="Obstacle"){
             PlayerLives--;
         }
+    }
+
+        IEnumerator AfterAnim(){
+        yield return new WaitForSeconds(2f);
+        if(loseMenu==false)
+            loseMenu.isLose=true;
     }
 }
