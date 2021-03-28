@@ -1,18 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ButtonController : MonoBehaviour
-{
+public class ButtonController : MonoBehaviour{
+    public Animator transition;
+    public float transitionTime=1f;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public void D2Game(){
+        StartCoroutine(LoadLevel(1));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Runner(){
+        StartCoroutine(LoadLevel(2));
+    }
+
+    public void HiScore(){
+        StartCoroutine(LoadLevel(3));
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
+
+    IEnumerator LoadLevel(int LevelIndex){
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(LevelIndex);
     }
 }

@@ -27,6 +27,7 @@ public class EnemyBullet : MonoBehaviour{
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name=="Player"){
             plCon.PlayerLives--;
+            FindObjectOfType<AudioManager>().Play("Regret");
             Destroy(this.gameObject);
         }
     }

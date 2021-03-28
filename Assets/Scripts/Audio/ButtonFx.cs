@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonFx : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class ButtonFx : MonoBehaviour{
+    public AudioSource myFx;
+    public AudioClip hoverFx;
+    public AudioClip clickedFx;
+
+    public void HoverSound(){
+        myFx.PlayOneShot(hoverFx);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void ClickSound(){
+        myFx.PlayOneShot(clickedFx);
     }
 }
