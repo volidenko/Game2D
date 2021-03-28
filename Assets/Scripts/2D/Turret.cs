@@ -9,10 +9,13 @@ public class Turret : MonoBehaviour{
     float dist;
     bool actio=false;
     int enemyLive=10;
+    public int price=2;
+    PlayerController2D plCon;
 
     // Start is called before the first frame update
     void Start(){
         pl=GameObject.Find("Player");
+        plCon=GameObject.Find("Player").GetComponent<PlayerController2D>();
     }
 
     // Update is called once per frame
@@ -22,13 +25,17 @@ public class Turret : MonoBehaviour{
             actio=true;
             Shoot();
         }
-        if(enemyLive==0)
+        if(enemyLive==0){
+            FindObjectType<AudioManager>().Play("Boom");
             Destroy(this.gameObject);
+            plCon.PlayerScore+=price;
+        }
     }
 
     void Shoot(){
         Vector3 position=bulSpawn.transform.position;
         Instantiate(bullet, position, bullet.transform.rotation);
+        FindObjectType<AudioManager>().Play("EnShoot");
         StartCoroutine("Charge");
     }
 

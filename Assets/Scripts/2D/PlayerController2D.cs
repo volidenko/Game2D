@@ -7,7 +7,7 @@ public class PlayerController2D : MonoBehaviour{
     public int PlayerScore=0;
     public int MaxPlayerLives=5;
     float speed=5f;
-    float jumpForse=15f;
+    float jumpForse=15f; 
     Rigidbody2D rb2;
     SpriteRenderer sprRen;
     public bool isGrounded;
@@ -19,9 +19,18 @@ public class PlayerController2D : MonoBehaviour{
     Animator anim;
     LoseMenu loseMenu;
     WinMenu winMenu;
-
+    bool isStep;
     // Start is called before the first frame update
     void Start(){
+        if(SceneManager.GetActiveScene().buildIndex==1){
+            HiScoreScr.d2CurScore=PlayerScore;
+            //print("dfd");
+        }
+        else{
+            PlayerScore=HiScoreScr.d2CurScore;
+            print(HiScoreScr.d2CurScore);
+            //print("dgfg");
+        }
         rb2=GetComponent<Rigidbody2D>();
         sprRen=GetComponentInChildren<SpriteRenderer>();
         anim=gameObject.transform.GetChild(0).GetComponent<Animator>();
@@ -37,16 +46,26 @@ public class PlayerController2D : MonoBehaviour{
     void Update(){
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
         if(Input.GetButtonDown("Fire1")) Shoot();
-        if(Input.GetButton("Horizontal")) Run();
+        if(Input.GetButton("Horizontal")){
+            Run();
+            if(isStep==false){
+                FindObjectOfType<AudioManager>().Play("Step");
+                isStep=true;
+                StartCoroutine("StepByStep");
+                //print("cfsvgd");
+            }
+        }
         if(Input.GetButtonDown("Jump")&&isGrounded) Jump(); //прыжок
         if(PlayerLives==0&&isDeath==false){
             isDeath=true;
             anim.SetBool("isDeath", isDeath); 
+            FindObjectOfType<AudioManager>().Play("Lose");
             StartCoroutine("AfterAnim");
+            speed=0f;
             // PlayerLives=5;
             // transform.position=rPoint.position;
         }
-        print(PlayerLives);
+        //print(PlayerLives);
         //healthBar.SetHealth(PlayerLives);
         if(PlayerScore>HiScoreScr.d2HiScore)
             HiScoreScr.d2HiScore=PlayerScore;
@@ -74,13 +93,19 @@ public class PlayerController2D : MonoBehaviour{
     void Shoot(){
         Vector3 position=bulSpawn.transform.position;
         Instantiate(bullet, position, bullet.transform.rotation);
+        FindObjectOfType<AudioManager>().Play("PlShoot");
     }
     
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.name=="FloorDown"){
+            FindObjectOfType<AudioManager>().Play("Lose");
+            if(loseMenu.isLose==false)
+                loseMenu.isLose=true;
             transform.position=rPoint.position;
         }
         if(collision.gameObject.name=="EndLevel"){
+             if(winMenu.isWin==false)
+                winMenu.isWin=true;
             transform.position=rPoint.position;
         }
         if(collision.gameObject.name=="Obstacle"){
@@ -88,9 +113,15 @@ public class PlayerController2D : MonoBehaviour{
         }
     }
 
-        IEnumerator AfterAnim(){
+    IEnumerator AfterAnim(){
         yield return new WaitForSeconds(2f);
-        if(loseMenu==false)
+        FindObjectOfType<AudioManager>().Play("Boom");
+        if(loseMenu.isLose==false)
             loseMenu.isLose=true;
+    }
+
+    IEnumerator StepByStep(){
+        yield return new WaitForSeconds(0.4f);
+        isStep=false;
     }
 }
