@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Turret : MonoBehaviour{
     public GameObject bullet;
@@ -26,7 +28,7 @@ public class Turret : MonoBehaviour{
             Shoot();
         }
         if(enemyLive==0){
-            FindObjectType<AudioManager>().Play("Boom");
+            FindObjectOfType<AudioManager>().Play("Boom");
             Destroy(this.gameObject);
             plCon.PlayerScore+=price;
         }
@@ -35,7 +37,7 @@ public class Turret : MonoBehaviour{
     void Shoot(){
         Vector3 position=bulSpawn.transform.position;
         Instantiate(bullet, position, bullet.transform.rotation);
-        FindObjectType<AudioManager>().Play("EnShoot");
+        FindObjectOfType<AudioManager>().Play("EnShoot");
         StartCoroutine("Charge");
     }
 

@@ -11,12 +11,10 @@ public class PauseMenuScript : MonoBehaviour{
     PlayerController2D plCon;
     public Text text;
     public Text hStext;
-    // Start is called before the first frame update
     void Start(){
         plCon=GameObject.Find("Player").GetComponent<PlayerController2D>();
     }
 
-    // Update is called once per frame
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(gameIsPaused){
@@ -27,29 +25,32 @@ public class PauseMenuScript : MonoBehaviour{
             }
         }
         text.text="Score "+plCon.PlayerScore.ToString();
-        hStext.text="Hi-score "+plCon.HiScoreScr.ToString();
+        //hStext.text="Hi-score "+plCon.HiScoreScr.ToString();
     }
     public void Resume(){
         pauseMenuUI.SetActive(false);
         Time.timeScale=1f;
         gameIsPaused=false;
-        FindObjectType<AudioManager>().Play("Theme");
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     void Pause(){
         pauseMenuUI.SetActive(true);
         Time.timeScale=0f;
         gameIsPaused=true;
+        FindObjectOfType<AudioManager>().Pause("Theme");
+        FindObjectOfType<AudioManager>().Play("Regret");
     }
 
     public void LoadMenu(){
         SceneManager.LoadScene(0);
         Time.timeScale=1f;
+        FindObjectOfType<AudioManager>().Play("Theme");
         // gameIsPaused=false;
     }
 
     public void QuitGame(){
-        print("uiyhu7yh");
+        //print("uiyhu7yh");
         Application.Quit();
     }
 }

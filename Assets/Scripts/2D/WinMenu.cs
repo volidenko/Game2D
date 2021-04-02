@@ -9,7 +9,6 @@ public class WinMenu : MonoBehaviour{
     public GameObject winMenuUI;
     PlayerController2D plCon;
 
-    // Start is called before the first frame update
     void Start(){
         plCon=GameObject.Find("Player").GetComponent<PlayerController2D>();
     }
@@ -23,18 +22,21 @@ public class WinMenu : MonoBehaviour{
     void WinScreen(){
         winMenuUI.SetActive(true);
         Time.timeScale=0f;
+        FindObjectOfType<AudioManager>().Pause("Theme");
     }
 
     public void LoadMenu(){
         SceneManager.LoadScene(0);
         isWin=false;
         Time.timeScale=1f;
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     public void Restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         isWin=false;
         Time.timeScale=1f;
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     public void NextLevel(){
@@ -43,7 +45,7 @@ public class WinMenu : MonoBehaviour{
         SceneManager.LoadScene(5);
         isWin=false;
         Time.timeScale=1f;
-        FindObjectType<AudioManager>().Play("Theme");
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 }
   

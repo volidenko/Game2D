@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class ButtonFx : MonoBehaviour{
     public AudioSource myFx;
-    public AudioClip hoverFx;
-    public AudioClip clickedFx;
-
     public void HoverSound(){
-        myFx.PlayOneShot(hoverFx);
+        FindObjectOfType<AudioManager>().Play("WinSound");
     }
 
     public void ClickSound(){
-        myFx.PlayOneShot(clickedFx);
+        FindObjectOfType<AudioManager>().Play("Boom");
+    }
+
+    public void ExitSound(){
+        FindObjectOfType<AudioManager>().Play("PlShoot");
     }
 }

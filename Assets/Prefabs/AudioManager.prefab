@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6331626362615667022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6331626362615667017}
+  - component: {fileID: 6331626362615667016}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6331626362615667017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6331626362615667022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 493.34653, y: 319.3308, z: -152.59027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6331626362615667016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6331626362615667022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e866786e15cede64eb95ac18cf086427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: WinSound
+    clip: {fileID: 8300000, guid: eb9c207b8f6e2bc4798c414845be32e9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 4d6fb552fc1e86549a13c48fcb05b1cb, type: 3}
+    volume: 0.631
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlShoot
+    clip: {fileID: 8300000, guid: 1623a707d4c42044087a774524260480, type: 3}
+    volume: 0.535
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Regret
+    clip: {fileID: 8300000, guid: 0e52ff7821623f547a54904c6a6a0e6e, type: 3}
+    volume: 0.648
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Step
+    clip: {fileID: 8300000, guid: f91d5dd5236f44f418a51cd43b54524f, type: 3}
+    volume: 0.397
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Boom
+    clip: {fileID: 8300000, guid: 75621873ecd86874c85ac6c6ff9deced, type: 3}
+    volume: 0.795
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 2ad32251696771b4a96370ea3ae484e5, type: 3}
+    volume: 0.876
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: EnShoot
+    clip: {fileID: 8300000, guid: 827d88202b4de9347a79d2e76ea2c8d6, type: 3}
+    volume: 0.876
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
