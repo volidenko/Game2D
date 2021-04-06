@@ -1,12 +1,39 @@
 fileFormatVersion: 2
 guid: 1d7e92a520b4adc47a7bddf8580f4b10
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8423751162374561298
+    second: action-commando-game-character-animation-sprite_12402-123_0
+  - first:
+      213: 5109138102563072792
+    second: action-commando-game-character-animation-sprite_12402-123_1
+  - first:
+      213: 2111993087020940155
+    second: action-commando-game-character-animation-sprite_12402-123_2
+  - first:
+      213: -1628734212620646103
+    second: action-commando-game-character-animation-sprite_12402-123_3
+  - first:
+      213: -2531762377264942869
+    second: action-commando-game-character-animation-sprite_12402-123_4
+  - first:
+      213: -6026095141982858027
+    second: action-commando-game-character-animation-sprite_12402-123_5
+  - first:
+      213: -6312548297120729717
+    second: action-commando-game-character-animation-sprite_12402-123_6
+  - first:
+      213: 8530340556320473504
+    second: action-commando-game-character-animation-sprite_12402-123_7
+  - first:
+      213: -5348059066516778212
+    second: action-commando-game-character-animation-sprite_12402-123_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +61,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,9 +76,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -71,13 +98,214 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 399
+        width: 112
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e9e9d1d0d27e470800000000000000
+      internalID: 8423751162374561298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 406
+        width: 137
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b6fafe80e47e640800000000000000
+      internalID: 5109138102563072792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_2
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 427
+        width: 162
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bb6f7d58e4f4d10800000000000000
+      internalID: 2111993087020940155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 224
+        width: 160
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929883fecd29569e0800000000000000
+      internalID: -1628734212620646103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 224
+        width: 162
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0bc6f188f5ddcd0800000000000000
+      internalID: -2531762377264942869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_5
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 241
+        width: 167
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4976f55620f5ca0800000000000000
+      internalID: -6026095141982858027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_6
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 64
+        width: 165
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b853f92e4c25568a0800000000000000
+      internalID: -6312548297120729717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 73
+        width: 167
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a107905a8bd16670800000000000000
+      internalID: 8530340556320473504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action-commando-game-character-animation-sprite_12402-123_8
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 79
+        width: 185
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13d57e3d90e7c5b0800000000000000
+      internalID: -5348059066516778212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7fad6df5c22aa4748a2eee8b652a0dcd
     internalID: 0
     vertices: []
     indices: 
