@@ -56,7 +56,9 @@ public class PlayerController2D : MonoBehaviour{
                 //print("cfsvgd");
             }
         }
-        if(Input.GetButtonDown("Jump")&&isGrounded) Jump(); //прыжок
+        //if(Input.GetButtonDown("Jump")&&isGrounded) Jump(); //прыжок
+        if(Input.GetButtonDown("Jump")) Jump(); //прыжок
+
         if(PlayerLives==0&&isDeath==false){
             isDeath=true;
             anim.SetBool("isDeath", isDeath); 
@@ -79,7 +81,6 @@ public class PlayerController2D : MonoBehaviour{
             this.transform.localScale=new Vector3(-1f, 1f, 1f);
         else
             this.transform.localScale=new Vector3(1f, 1f, 1f);
-
     }
 
     public void Jump(){
