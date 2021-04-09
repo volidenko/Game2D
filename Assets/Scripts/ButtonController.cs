@@ -11,14 +11,16 @@ public class ButtonController : MonoBehaviour{
 
     public void D2Game(){
         StartCoroutine(LoadLevel(1));
+        //SceneManager.LoadScene(1);
     }
 
     public void Runner(){
-        StartCoroutine(LoadLevel(2));
+        StartCoroutine(LoadLevel(5));
+        //SceneManager.LoadScene(5);
     }
 
     public void HiScore(){
-        StartCoroutine(LoadLevel(3));
+        StartCoroutine(LoadLevel(4));
     }
 
     public void QuitGame(){
@@ -26,7 +28,7 @@ public class ButtonController : MonoBehaviour{
     }
 
     IEnumerator LoadLevel(int LevelIndex){
-        transition.SetTrigger("Start");
+        //transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(LevelIndex);
     }
